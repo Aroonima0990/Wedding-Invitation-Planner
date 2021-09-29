@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link css stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Link various google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,468;1,700&family=WindSong:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Festive&family=Great+Vibes&family=Lobster+Two&display=swap" rel="stylesheet">
+    
+    <!-- Link javaScript -->
+    <script src="./index.js"></script>
+    
+    <title>Wedding Invitation Planner</title>
+</head>
+<body>
+    <!-- Welcome Overlay div on DOMLoad-->
+    <div class="pointer" id="overlay">
+        <!-- Button to close overlay div -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeOverlay()">&#9932;</a>
+        <!-- Welcome msg on DOM load -->
+        <div id="welcome">Welcome to Proem!</div>
+    </div>
+
+    <div id="invitationPlanner" class= "main">
+
+         <!-- Overlay div for choosing font styles-->
+        <div id ="fontStyle">
+            <!-- Button to close overlay div -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!-- List of styles to choose -->
+            <div class="fontOpt" id="selectorFontList">
+                <a onclick="fontStyl1()">Style One</a> <br><br>
+                <a onclick="fontStyl2()">Style Two</a> <br><br>
+                <a onclick="fontStyl3()">Style Three</a> <br><br>  
+                <a onclick="fontStyl4()">Style Four</a> 
+            </div>
+        </div>
+        <!-- GrandParent wrapper div -->
+        <div class="wrapper">
+            <header>
+            <h1>Proem</h1>
+            </header>
+            
+            <!-- Left Parent.MOTHER div -->
+            <div class="leftDiv">
+                <h2>|&nbsp; CUSTOMIZE THE FORMAT &nbsp;|</h2> 
+
+                <!-- The navigation bar in mother div -->
+                <div class="navBar">
+                    <!--  sub PASTEL button navigation  -->
+                    <div class="subNav">
+                        <button class="subNavBtn">PASTELS</button>
+                        <!-- Dropdown PASTEL OPTIONS  -->
+                        <div class="subNavOpt">
+                        
+                            <button class="pointer" id="pt1" onclick="styleChange1()">style 1</button> 
+                            
+                            <button class="pointer" id="pt2" onclick="styleChange2()">style 2</button>
+                            
+                            <button class="pointer" id="pt3" onclick="styleChange3()">style 3</button>
+                            
+                            <button class="pointer" id="pt4" onclick="styleChange4()">style 4</button>
+                            
+                            <button class="pointer" id="pt5" onclick="styleChange5()">style 5</button>
+                            
+                            <button class="pointer" id="pt6" onclick="styleChange6()">style 6</button>
+        
+                        </div>
+                    </div>
+
+                    <!--  sub FLORALS button navigation  -->
+                    <div class="subNav">
+                        <button class="subNavBtn" id="floral">FLORALS</button>
+                        <!-- Dropdown FLORAL OPTIONS  -->
+                        <div class="subNavOpt">
+                        
+                            <button class="pointer" id="flo-1"  onclick="styleChange7()">style 1</button> 
+                            
+                            <button class="pointer" id="flo-2"  onclick="styleChange8()">style 2</button> 
+
+                            <button class="pointer" id="flo-3" onclick="styleChange9()">style 3</button>
+
+                            <button class="pointer" id="flo-4" onclick="styleChange10()">style 4</button> 
+
+                            <button class="pointer" id="flo-5" onclick="styleChange11()">style 5</button> 
+
+                            <button class="pointer" id="flo-6" onclick="styleChange12()">style 6</button> 
+                            
+                        </div>
+                    </div>
+                </div>   
+
+                <!--  Introduction text  -->
+                <section>
+                <h4>&nbsp;</h4> 
+                    <p class="banner">Effortless Invitation Design Tool!</p>
+                    <p>We are here to make wedding planning a fun filled creative experience.
+                    With just few clicks, customize the perfect wedding invitation to soothe your addled nerves plus nervous bank accounts.</p>
+                </section>
+                <!-- First Child of Mother div -->   
+                <div class="columnOne">
+
+                    <h3>Have fun, and happy planning!</h3> 
+                    <br>
+                    <!--  Monogram Checkbox  -->
+                    <input type="checkbox" name="monoYes" id="monoYes" value="initials" onchange="getPerson()" checked="checked" />
+                    <label id="mono">Monogram</label> 
+                    <!--  Input fiels to get couple names -->
+                    <fieldset id="coupleNames">
+                        <legend>Couple</legend>
+                        <input type="text" id="personOne" placeholder="Person 1" pattern="[A-Za-z]" maxlength="17" onkeypress="getPerson()" onkeyup="cOne()" >
+                        <input type="text" id="personTwo" placeholder="Person 2" pattern="[A-Za-z]" maxlength="17"  onkeypress="getPerson()" onkeyup="cTwo()">
+                    </fieldset>
+                    
+                    <!--  Input fiels to get venue address  -->
+                    <fieldset id="venueDetails">
+                        <legend>Wedding Venue</legend>
+                        <input type="text" name="lineOne" id="venue-L1" placeholder="Line 1" maxlength="39" onkeyup="address()">
+                        <input type="text" name="lineTwo" id="venue-L2" placeholder="Line 2" maxlength="39" onkeyup="address()">
+                        <input type="text" name="lineThree" id="venue-L3" placeholder="Postcode" maxlength="6" onkeyup="address()">
+                    </fieldset>  
+                    <br>
+                    <!--  navigation div for font style -->
+                    <div class="navBar">
+                        <div class="subNav">
+                            <button class="subNavBtn" id="fontStl"  onclick="openNav()">FONT STYLES</button>
+                        </div>
+                    </div>
+                    
+                </div>  
+            <!-- Second Child of Mother div -->  
+                <div class="columnTwo">
+                     <!--  Input fiels for hostline -->
+                    <br>
+                    <textarea id="host-line" name="hostText" placeholder="Host Line" onkeyup="getHost()"></textarea>
+                    <br>  
+                     <!--  Input fiels for gathering detail -->
+                    <textarea id="dress-code" name="typeText" placeholder="Gathering Type (dresscode)" onkeyup="getType()"></textarea>
+                    <br> 
+                     <!--  Input fiels to get post details -->
+                    <textarea id="post-msg" name="postText" placeholder="Post Ceremony.." onkeyup="postMsg()"></textarea>
+                    <br>
+                     <!--  Input fiels to get footnote-->
+                    <textarea id="foot-note" name="footText" placeholder="Footnote / RSVP" onkeyup="rsvpNote()"></textarea>
+                    <br> 
+                            
+                </div> 
+                <div class="clear"></div> 
+            </div>    
+        
+            
+            
+            <!-- Right Parent div FATHER --> 
+            <div class="rightDiv" id="father-right">
+                 <!--  Invitation Card realtime spans -->
+                <div class="inviteCard" id="invite-card">
+                    <span id="monogram"></span> 
+                    <span contenteditable="true" class="pointer" id="hostLine">Together with our families we invite   you to the wedding of</span>
+                    <br>
+                    <span id="coupleOne">Aurora</span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="and">and</span>
+                    <br>
+                    <span id="coupleTwo">David</span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="dateTime">TUESDAY | 22 September 2021 </span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="addLine1">Unit 345A </span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="addLine2">822 Elizabeth Street  3000</span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="type">in an informal gathering for fun and frolic</span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="post">Reception and dinner follows</span>
+                    <br>
+                    <span contenteditable="true" class="pointer" id="footNote">RSVP by September 20 on website.</span>
+                </div>
+            
+            <!-- Footer inside Grandfather --> 
+            <footer>
+                <p>&copy; Proem_avm2021</p>
+            </footer>          
+            </div>
+            <div class="clear"></div>    
+        </div>
+
+    </div>
+   
+</body>
+</html>
