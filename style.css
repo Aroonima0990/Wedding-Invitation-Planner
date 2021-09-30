@@ -56,7 +56,7 @@ body, header, h1 {
     display: none
 }
 #wrapper {
-    width: 100%;
+    width: 1536px;
     height: 745px;
     background-color: #FFFFFF;    
 }
@@ -438,3 +438,39 @@ footer {
     font-family: 'Noto Serif Display', serif;  
 }
 
+
+
+ /* Media Querie Breakpoint For Desktops and Laptops */
+@media only screen and (min-width:1260px) 
+                   and (-webkit-min-device-pixel-ratio: 1){
+    
+    #wrapper {
+        width: 100%;
+        height: 745px;
+    }   
+    
+    .inviteCard span {
+        left: 730px;  
+    }
+
+    .subNavOpt button {
+        margin: 0 11px;
+    }
+
+    .subNavOpt {
+        padding: 10px 5px;
+    }
+
+    textarea {
+        width: 200px;
+    }
+
+    .fontOpt {
+        left: 50px;    
+    }
+
+    #fontStl {
+        margin-left: 80px;
+    }
+}
+                
