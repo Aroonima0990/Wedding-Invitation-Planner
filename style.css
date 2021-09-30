@@ -88,7 +88,7 @@ h2 {
 .leftDiv {
     float: left;
     width: 40%; 
-    height: 690px;  
+    height: 680px;  
     margin-top: 51.6px;
     background-color: #f4f4f4; 
     font-family: 'Noto Serif Display', serif; 
@@ -441,36 +441,56 @@ footer {
 
 
  /* Media Querie Breakpoint For Desktops and Laptops */
-@media only screen and (min-width:1260px) 
+@media only screen and (min-width:1903px) 
                    and (-webkit-min-device-pixel-ratio: 1){
     
     #wrapper {
-        width: 100%;
+        width: 1536px;
         height: 745px;
     }   
     
     .inviteCard span {
-        left: 730px;  
+        left: 1180px;  
     }
 
+    .subNav .subNavBtn {
+        margin-left: 250px;
+        font-size: 0.9em;
+    }
     .subNavOpt button {
-        margin: 0 11px;
+        margin: 0 25px;
+        
     }
 
     .subNavOpt {
-        padding: 10px 5px;
-    }
-
-    textarea {
-        width: 200px;
+        padding: 20px 50px;
     }
 
     .fontOpt {
-        left: 50px;    
+        left: 100px;    
     }
 
     #fontStl {
-        margin-left: 80px;
+        margin-left: 130px;
+    }
+
+    input {
+        width: 320px;
+    }
+
+    #monoYes {
+        left: -20px;
+    }
+    #mono {
+        left: 160px; 
+    }
+
+    textarea {
+        width: 320px;
+    }
+
+    header {
+        width: 100%;
     }
 }
                 
